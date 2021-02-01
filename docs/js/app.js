@@ -19,7 +19,10 @@ const getMyName = (data) => {
 const createElements = (data) => {
   const name = addName(data.name, data.surname);
   const image = addImage(data.mugshot);
-  const other = addOther(data.other);
+  // const other = addOther(data.other);
+  const sports = addSport(data.other.sport);
+  const music = addMusic(data.other.muziek);
+  const work = addWork(data.other.werkplek);
   const gitHub = addGit(data.githubHandle);
 };
 
@@ -38,44 +41,55 @@ const addImage = (image) => {
   content.appendChild(element);
 };
 
-const addOther = (data) => {
+const addSport = (sport) => {
   let content = document.getElementById('content');
-  let element = document.createElement('ul');
+  let element = document.createElement('h2');
+  let textnode = document.createTextNode('Doet aan:');
+  element.appendChild(textnode);
   content.appendChild(element);
 
-  let listItem = document.createElement('li');
-  let itemOne = document.createTextNode(data.sport);
-  listItem.appendChild(itemOne);
-  element.appendChild(listItem);
+  let elem = document.createElement('p');
+  let text = document.createTextNode(sport);
+  elem.appendChild(text);
+  content.appendChild(elem);
+};
 
-  let listItemTwo = document.createElement('li');
-  let itemTwo = document.createTextNode(data.muziek);
-  listItemTwo.appendChild(itemTwo);
-  element.appendChild(listItemTwo);
+const addMusic = (music) => {
+  let content = document.getElementById('content');
+  let element = document.createElement('h2');
+  let textnode = document.createTextNode('Luistert graag naar:');
+  element.appendChild(textnode);
+  content.appendChild(element);
 
-  let listItemThree = document.createElement('li');
-  let itemThree = document.createTextNode(data.werkplek);
-  listItemThree.appendChild(itemThree);
-  element.appendChild(listItemThree);
+  let elem = document.createElement('p');
+  let text = document.createTextNode(music);
+  elem.appendChild(text);
+  content.appendChild(elem);
+};
+
+const addWork = (work) => {
+  let content = document.getElementById('content');
+  let element = document.createElement('h2');
+  let textnode = document.createTextNode('Verder hou ik er van om:');
+  element.appendChild(textnode);
+  content.appendChild(element);
+
+  let elem = document.createElement('p');
+  let text = document.createTextNode(work);
+  elem.appendChild(text);
+  content.appendChild(elem);
 };
 
 const addGit = (data) => {
   let content = document.getElementById('content');
   let element = document.createElement('a');
-  // let text = document.createTextNode('');
-
+  let text = document.createTextNode('Bekijk mijn GitHub');
   element.href = data;
   element.target = '_blank';
   content.appendChild(element);
-  // element.appendChild(text);
+  element.appendChild(text);
 };
 
-// const addName = (name, surname) => {
-//   let element = document.createElement('h1');
-//   let textnode = document.createTextNode(`${name} ${surname}`);
-//   element.appendChild(textnode);
-//   document.getElementById('content').appendChild(element);
-// };
 // // PUT REQUEST
 // const putData = {
 //   id: 1,
