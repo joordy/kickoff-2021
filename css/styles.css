@@ -1,14 +1,82 @@
 :root {
-  --primary:#FFF;
-  --secondary:#000;
+  --primary: #eeeeef;
+  --secondary: #000;
+  --fontsize: 1em;
+  --fullwidth: 100%;
 }
 
 * {
-  box-sizing:border-box;
+  box-sizing: border-box;
   scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
 }
 
 html {
   background: var(--secondary);
-  color: var(--primary);
+  color: var(--secondary);
+}
+
+body {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+
+section {
+  width: 600px;
+  height: 325px;
+  padding: var(--fontsize);
+  border-radius: 8px;
+  background-color: var(--primary);
+  display: flex;
+  justify-content: space-between;
+  transition: 0.3s;
+  box-shadow: rgba(255, 255, 255, 0.35) 10px 15px 15px;
+}
+section:hover {
+  transform: scale(1.05) rotate(3deg);
+}
+
+section article:nth-of-type(1) {
+  width: 30%;
+  display: grid;
+  place-items: center;
+}
+
+section article:nth-of-type(1) img {
+  width: var(--fullwidth);
+  border-radius: 50%;
+}
+
+section article:nth-of-type(2) {
+  width: 60%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+h1 {
+  font-size: 40px;
+  /* color: hotpink; */
+}
+
+ul {
+}
+
+li {
+  list-style-position: inside;
+}
+
+a {
+  text-decoration: none;
+  width: 100%;
+  display: block;
+  color: var(--secondary);
+  font-size: 2em;
+}
+
+a::before {
+  font-family: FontAwesome;
+  content: '\f09b';
 }
