@@ -90,41 +90,41 @@ const addGit = (data) => {
   element.appendChild(text);
 };
 
-// // PUT REQUEST
-const putData = {
-  id: 39,
-  teamId: 6,
-  createdAt: '',
-  name: 'Jordy',
-  prefix: '',
-  surname: 'Fronik',
-  avatar: '',
-  mugshot: 'https://avatars.githubusercontent.com/u/48051912?s=400&u=346ea9e1040bca4b04cd890b47987e35176a2421&v=4',
-  githubHandle: 'https://github.com/joordy',
-  other: {
-    sport: 'Fitness, fietsen, hardlopen',
-    muziek: 'Noem maar op en ik vind het leuk',
-    werkplek: 'Thuis, achter mijn ultrawide',
-  },
-};
+// // // PUT REQUEST
+// const putData = {
+//   id: 39,
+//   teamId: 6,
+//   createdAt: '',
+//   name: 'Jordy',
+//   prefix: '',
+//   surname: 'Fronik',
+//   avatar: '',
+//   mugshot: 'https://avatars.githubusercontent.com/u/48051912?s=400&u=346ea9e1040bca4b04cd890b47987e35176a2421&v=4',
+//   githubHandle: 'https://github.com/joordy',
+//   other: {
+//     sport: 'Fitness, fietsen, hardlopen',
+//     muziek: 'Noem maar op en ik vind het leuk',
+//     werkplek: 'Thuis, achter mijn ultrawide',
+//   },
+// };
 
-async function postData(url = '', data = {}) {
-  const response = await fetch(url, {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(data),
-  });
-  return response.json();
-}
+// async function postData(url = '', data = {}) {
+//   const response = await fetch(url, {
+//     method: 'GET',
+//     headers: {
+//       'Content-Type': 'application/json',
+//     },
+//     body: JSON.stringify(data),
+//   });
+//   return response.json();
+// }
 
-postData(`${url}/squads/2/teams/6/members/`, putData).then((data) => {
-  console.log('add', data);
-  let element = document.createElement('h1');
-  let textnode = document.createTextNode(`${data.name} ${data.surname}`);
-  element.appendChild(textnode);
-  document.getElementById('content').appendChild(element);
+// postData(`${url}/squads/2/teams/6/members/`, putData).then((data) => {
+//   console.log('add', data);
+//   let element = document.createElement('h1');
+//   let textnode = document.createTextNode(`${data.name} ${data.surname}`);
+//   element.appendChild(textnode);
+//   document.getElementById('content').appendChild(element);
 
-  console.log(data.name);
-});
+//   console.log(data.name);
+// });
